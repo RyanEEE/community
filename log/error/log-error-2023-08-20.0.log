@@ -1,23 +1,5 @@
-2023-08-23 22:34:20,845 ERROR [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter [LoggingFailureAnalysisReporter.java:42] 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-Field kaptchaProducer in com.nowcoder.community.controller.LoginController required a bean of type 'com.google.code.kaptcha.Producer' that could not be found.
-
-The injection point has the following annotations:
-	- @org.springframework.beans.factory.annotation.Autowired(required=true)
-
-
-Action:
-
-Consider defining a bean of type 'com.google.code.kaptcha.Producer' in your configuration.
-
-2023-08-23 22:53:05,069 ERROR [http-nio-8080-exec-1] o.t.TemplateEngine [TemplateEngine.java:1136] [THYMELEAF][http-nio-8080-exec-1] Exception processing template "/site/login": An error happened during template parsing (template: "class path resource [templates//site/login.html]")
-org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates//site/login.html]")
+2023-08-20 16:14:10,009 ERROR [http-nio-8080-exec-2] o.t.TemplateEngine [TemplateEngine.java:1136] [THYMELEAF][http-nio-8080-exec-2] Exception processing template "/index": An error happened during template parsing (template: "class path resource [templates//index.html]")
+org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates//index.html]")
 	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:241)
 	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100)
 	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666)
@@ -71,12 +53,12 @@ org.thymeleaf.exceptions.TemplateInputException: An error happened during templa
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.lang.Thread.run(Thread.java:750)
-Caused by: org.attoparser.ParseException: Could not parse as expression: "javascript:refresh_kaptcha();" (template: "/site/login" - line 97, col 11)
+Caused by: org.attoparser.ParseException: Could not parse as expression: "{/register}" (template: "/index" - line 34, col 29)
 	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:393)
 	at org.attoparser.MarkupParser.parse(MarkupParser.java:257)
 	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230)
 	... 52 common frames omitted
-Caused by: org.thymeleaf.exceptions.TemplateProcessingException: Could not parse as expression: "javascript:refresh_kaptcha();" (template: "/site/login" - line 97, col 11)
+Caused by: org.thymeleaf.exceptions.TemplateProcessingException: Could not parse as expression: "{/register}" (template: "/index" - line 34, col 29)
 	at org.thymeleaf.standard.expression.StandardExpressionParser.parseExpression(StandardExpressionParser.java:131)
 	at org.thymeleaf.standard.expression.StandardExpressionParser.parseExpression(StandardExpressionParser.java:62)
 	at org.thymeleaf.standard.expression.StandardExpressionParser.parseExpression(StandardExpressionParser.java:44)
@@ -98,8 +80,8 @@ Caused by: org.thymeleaf.exceptions.TemplateProcessingException: Could not parse
 	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:710)
 	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
 	... 54 common frames omitted
-2023-08-23 22:53:05,073 ERROR [http-nio-8080-exec-1] o.a.c.c.C.[.[.[.[dispatcherServlet] [DirectJDKLog.java:175] Servlet.service() for servlet [dispatcherServlet] in context with path [/community] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates//site/login.html]")] with root cause
-org.thymeleaf.exceptions.TemplateProcessingException: Could not parse as expression: "javascript:refresh_kaptcha();" (template: "/site/login" - line 97, col 11)
+2023-08-20 16:14:10,020 ERROR [http-nio-8080-exec-2] o.a.c.c.C.[.[.[.[dispatcherServlet] [DirectJDKLog.java:175] Servlet.service() for servlet [dispatcherServlet] in context with path [/community] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates//index.html]")] with root cause
+org.thymeleaf.exceptions.TemplateProcessingException: Could not parse as expression: "{/register}" (template: "/index" - line 34, col 29)
 	at org.thymeleaf.standard.expression.StandardExpressionParser.parseExpression(StandardExpressionParser.java:131)
 	at org.thymeleaf.standard.expression.StandardExpressionParser.parseExpression(StandardExpressionParser.java:62)
 	at org.thymeleaf.standard.expression.StandardExpressionParser.parseExpression(StandardExpressionParser.java:44)
@@ -174,8 +156,8 @@ org.thymeleaf.exceptions.TemplateProcessingException: Could not parse as express
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.lang.Thread.run(Thread.java:750)
-2023-08-23 22:53:19,755 ERROR [http-nio-8080-exec-2] o.t.TemplateEngine [TemplateEngine.java:1136] [THYMELEAF][http-nio-8080-exec-2] Exception processing template "/site/login": An error happened during template parsing (template: "class path resource [templates//site/login.html]")
-org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates//site/login.html]")
+2023-08-20 16:14:11,933 ERROR [http-nio-8080-exec-3] o.t.TemplateEngine [TemplateEngine.java:1136] [THYMELEAF][http-nio-8080-exec-3] Exception processing template "/index": An error happened during template parsing (template: "class path resource [templates//index.html]")
+org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates//index.html]")
 	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:241)
 	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100)
 	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666)
@@ -229,12 +211,12 @@ org.thymeleaf.exceptions.TemplateInputException: An error happened during templa
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.lang.Thread.run(Thread.java:750)
-Caused by: org.attoparser.ParseException: Could not parse as expression: "javascript:refresh_kaptcha();" (template: "/site/login" - line 97, col 11)
+Caused by: org.attoparser.ParseException: Could not parse as expression: "{/register}" (template: "/index" - line 34, col 29)
 	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:393)
 	at org.attoparser.MarkupParser.parse(MarkupParser.java:257)
 	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230)
 	... 52 common frames omitted
-Caused by: org.thymeleaf.exceptions.TemplateProcessingException: Could not parse as expression: "javascript:refresh_kaptcha();" (template: "/site/login" - line 97, col 11)
+Caused by: org.thymeleaf.exceptions.TemplateProcessingException: Could not parse as expression: "{/register}" (template: "/index" - line 34, col 29)
 	at org.thymeleaf.standard.expression.StandardExpressionParser.parseExpression(StandardExpressionParser.java:131)
 	at org.thymeleaf.standard.expression.StandardExpressionParser.parseExpression(StandardExpressionParser.java:62)
 	at org.thymeleaf.standard.expression.StandardExpressionParser.parseExpression(StandardExpressionParser.java:44)
@@ -256,8 +238,8 @@ Caused by: org.thymeleaf.exceptions.TemplateProcessingException: Could not parse
 	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:710)
 	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
 	... 54 common frames omitted
-2023-08-23 22:53:19,757 ERROR [http-nio-8080-exec-2] o.a.c.c.C.[.[.[.[dispatcherServlet] [DirectJDKLog.java:175] Servlet.service() for servlet [dispatcherServlet] in context with path [/community] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates//site/login.html]")] with root cause
-org.thymeleaf.exceptions.TemplateProcessingException: Could not parse as expression: "javascript:refresh_kaptcha();" (template: "/site/login" - line 97, col 11)
+2023-08-20 16:14:11,934 ERROR [http-nio-8080-exec-3] o.a.c.c.C.[.[.[.[dispatcherServlet] [DirectJDKLog.java:175] Servlet.service() for servlet [dispatcherServlet] in context with path [/community] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates//index.html]")] with root cause
+org.thymeleaf.exceptions.TemplateProcessingException: Could not parse as expression: "{/register}" (template: "/index" - line 34, col 29)
 	at org.thymeleaf.standard.expression.StandardExpressionParser.parseExpression(StandardExpressionParser.java:131)
 	at org.thymeleaf.standard.expression.StandardExpressionParser.parseExpression(StandardExpressionParser.java:62)
 	at org.thymeleaf.standard.expression.StandardExpressionParser.parseExpression(StandardExpressionParser.java:44)
@@ -332,8 +314,8 @@ org.thymeleaf.exceptions.TemplateProcessingException: Could not parse as express
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.lang.Thread.run(Thread.java:750)
-2023-08-23 22:53:26,716 ERROR [http-nio-8080-exec-7] o.t.TemplateEngine [TemplateEngine.java:1136] [THYMELEAF][http-nio-8080-exec-7] Exception processing template "/site/login": An error happened during template parsing (template: "class path resource [templates//site/login.html]")
-org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates//site/login.html]")
+2023-08-20 16:16:28,707 ERROR [http-nio-8080-exec-5] o.t.TemplateEngine [TemplateEngine.java:1136] [THYMELEAF][http-nio-8080-exec-5] Exception processing template "/index": An error happened during template parsing (template: "class path resource [templates//index.html]")
+org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates//index.html]")
 	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:241)
 	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100)
 	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666)
@@ -387,12 +369,12 @@ org.thymeleaf.exceptions.TemplateInputException: An error happened during templa
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.lang.Thread.run(Thread.java:750)
-Caused by: org.attoparser.ParseException: Could not parse as expression: "javascript:refresh_kaptcha();" (template: "/site/login" - line 97, col 11)
+Caused by: org.attoparser.ParseException: Could not parse as expression: "{/register}" (template: "/index" - line 34, col 29)
 	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:393)
 	at org.attoparser.MarkupParser.parse(MarkupParser.java:257)
 	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230)
 	... 52 common frames omitted
-Caused by: org.thymeleaf.exceptions.TemplateProcessingException: Could not parse as expression: "javascript:refresh_kaptcha();" (template: "/site/login" - line 97, col 11)
+Caused by: org.thymeleaf.exceptions.TemplateProcessingException: Could not parse as expression: "{/register}" (template: "/index" - line 34, col 29)
 	at org.thymeleaf.standard.expression.StandardExpressionParser.parseExpression(StandardExpressionParser.java:131)
 	at org.thymeleaf.standard.expression.StandardExpressionParser.parseExpression(StandardExpressionParser.java:62)
 	at org.thymeleaf.standard.expression.StandardExpressionParser.parseExpression(StandardExpressionParser.java:44)
@@ -414,8 +396,8 @@ Caused by: org.thymeleaf.exceptions.TemplateProcessingException: Could not parse
 	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:710)
 	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
 	... 54 common frames omitted
-2023-08-23 22:53:26,717 ERROR [http-nio-8080-exec-7] o.a.c.c.C.[.[.[.[dispatcherServlet] [DirectJDKLog.java:175] Servlet.service() for servlet [dispatcherServlet] in context with path [/community] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates//site/login.html]")] with root cause
-org.thymeleaf.exceptions.TemplateProcessingException: Could not parse as expression: "javascript:refresh_kaptcha();" (template: "/site/login" - line 97, col 11)
+2023-08-20 16:16:28,708 ERROR [http-nio-8080-exec-5] o.a.c.c.C.[.[.[.[dispatcherServlet] [DirectJDKLog.java:175] Servlet.service() for servlet [dispatcherServlet] in context with path [/community] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates//index.html]")] with root cause
+org.thymeleaf.exceptions.TemplateProcessingException: Could not parse as expression: "{/register}" (template: "/index" - line 34, col 29)
 	at org.thymeleaf.standard.expression.StandardExpressionParser.parseExpression(StandardExpressionParser.java:131)
 	at org.thymeleaf.standard.expression.StandardExpressionParser.parseExpression(StandardExpressionParser.java:62)
 	at org.thymeleaf.standard.expression.StandardExpressionParser.parseExpression(StandardExpressionParser.java:44)
