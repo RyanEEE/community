@@ -4,6 +4,7 @@ import com.nowcoder.community.entity.DiscussPost;
 import com.nowcoder.community.entity.Page;
 import com.nowcoder.community.entity.User;
 import com.nowcoder.community.service.DiscussPostService;
+import com.nowcoder.community.service.LikeService;
 import com.nowcoder.community.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,7 +22,8 @@ public class HomeController {
 
     @Autowired
     private DiscussPostService discussPostService;
-
+    @Autowired
+    private LikeService likeService;
     @Autowired
     private UserService userService;
 
@@ -40,6 +42,9 @@ public class HomeController {
                 map.put("post", post);
                 User user = userService.findUserById(post.getUserId());
                 map.put("user", user);
+                long likeCount = likeService.findEntityLikeCount(1,post.getId());
+                map.put("likeCount",likeCount);
+
                 discussPosts.add(map);
             }
         }

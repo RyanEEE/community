@@ -2,6 +2,8 @@ package com.nowcoder.community.controller;
 
 import com.nowcoder.community.annotation.LoginRequired;
 import com.nowcoder.community.entity.User;
+import com.nowcoder.community.service.FollowService;
+import com.nowcoder.community.service.LikeService;
 import com.nowcoder.community.service.UserService;
 import com.nowcoder.community.util.CommunityConstant;
 import com.nowcoder.community.util.CommunityUtil;
@@ -38,7 +40,11 @@ public class UserController {
     @Autowired
     private UserService userService;
     @Autowired
+    private LikeService likeService;
+    @Autowired
     private HostHolder hostHolder;
+    @Autowired
+    private FollowService followService;
     @LoginRequired
     @RequestMapping(path = "/setting", method = RequestMethod.GET)
     public  String getSettingPage(){
@@ -128,5 +134,35 @@ public class UserController {
         userService.updatePassword(user.getId(),newpassword);
         return "redirect:/index";
 
+    }
+    //个人主页
+    @RequestMapping(path = "/profile/{userId}",method = RequestMethod.GET)
+    public String getProfilePage(@PathVariable("userId") int userId, Model model){
+        User user = userService.findUserById(userId);
+        if(user == null){
+            throw new RuntimeException("用户不存在");
+
+        }
+        //用户信息
+        model.addAttribute("user",user);
+        //点赞数量
+        int likeCount = likeService.findUserLikeCount(userId);
+        model.addAttribute("likeCount",likeCount);
+
+        //关注数量
+        long followeeCount = followService.findFolloweeCount(userId,3);
+        model.addAttribute("followeeCount",followeeCount);
+        long followerCount = followService.findFollowerCount(3,userId);
+        model.addAttribute("followerCount",followerCount);
+        boolean hasFollowed = false;
+        if(hostHolder.getUser()!=null){
+            hasFollowed = followService.hasFollowed(hostHolder.getUser().getId(),3,userId);
+
+        }
+        model.addAttribute("hasFollowed",hasFollowed);
+        //粉丝数量
+        //是否已关注
+
+        return "/site/profile";
     }
 }
