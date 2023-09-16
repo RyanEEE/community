@@ -40,5 +40,14 @@ public interface CommunityConstant {
     String TOPIC_FOLLOW="follow";
 
     int SYSTEM_USERID=1;
+    //发帖常量
+    String TOPIC_PUBLISH="publish";
+
+    //普通用户
+    String AUTHORITY_USER="user";
+    //管理员
+    String AUTHORITY_ADMIN="admin";
+    //版主
+    String AUTHORITY_MODERATOR="moderator";
 
 }

@@ -14,13 +14,15 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 public class WebMvcConfig implements WebMvcConfigurer {
     @Autowired
     private LoginTicketInterceptor loginTicketInterceptor;
-    @Autowired
-    private LoginRequiredInterceptor loginRequiredInterceptor;
+//    @Autowired
+//    private LoginRequiredInterceptor loginRequiredInterceptor;
 
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(loginTicketInterceptor).excludePathPatterns("/**/*.css","/**/*.js","/**/*.png",
                 "/**/*.jpeg","/**/*.jpg");
-        registry.addInterceptor(loginRequiredInterceptor).excludePathPatterns("/**/*.css","/**/*.js","/**/*.png",
-                "/**/*.jpeg","/**/*.jpg");
+//        registry.addInterceptor(loginRequiredInterceptor).excludePathPatterns("/**/*.css","/**/*.js","/**/*.png",
+//                "/**/*.jpeg","/**/*.jpg");
+//        registry.addInterceptor(messageIntercepter).excludePathPatterns("/**/*.css","/**/*.js","/**/*.png",
+//                "/**/*.jpeg","/**/*.jpg");
     }
 }

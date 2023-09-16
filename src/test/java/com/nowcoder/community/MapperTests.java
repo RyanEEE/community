@@ -3,6 +3,7 @@ package com.nowcoder.community;
 import com.nowcoder.community.dao.DiscussPostMapper;
 import com.nowcoder.community.dao.LoginTicketMapper;
 import com.nowcoder.community.dao.UserMapper;
+import com.nowcoder.community.dao.es.DiscussPostRepository;
 import com.nowcoder.community.entity.DiscussPost;
 import com.nowcoder.community.entity.LoginTicket;
 import com.nowcoder.community.entity.User;
@@ -11,6 +12,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.elasticsearch.core.ElasticsearchTemplate;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 
@@ -22,12 +24,17 @@ import java.util.List;
 @ContextConfiguration(classes = CommunityApplication.class)
 public class MapperTests {
     @Autowired
+    private DiscussPostMapper discussPostMapper;
+    @Autowired
+    private DiscussPostRepository discussPostRepository;
+    @Autowired
+    private ElasticsearchTemplate elasticsearchTemplate;
+    @Autowired
     private LoginTicketMapper loginTicketMapper;
     @Autowired
     private UserMapper userMapper;
 
-    @Autowired
-    private DiscussPostMapper discussPostMapper;
+
 
     @Test
     public void testSelectUser() {
@@ -103,4 +110,14 @@ public class MapperTests {
         loginTicketMapper.updateStatus("123",2);
         loginTicketMapper.selectByTicket("123");
     }
+
+    @Test
+    public void testInsert(){
+        discussPostRepository.save(discussPostMapper.selectDiscussPostById(241));
+        discussPostRepository.save(discussPostMapper.selectDiscussPostById(242));
+        discussPostRepository.save(discussPostMapper.selectDiscussPostById(243));
+
+    }
+
+
 }
