@@ -1,6 +1,7 @@
 package com.nowcoder.community.config;
 
 import com.nowcoder.community.annotation.LoginRequired;
+import com.nowcoder.community.controller.DateInterceptor;
 import com.nowcoder.community.controller.LoginRequiredInterceptor;
 import com.nowcoder.community.controller.LoginTicketInterceptor;
 import com.nowcoder.community.dao.LoginTicketMapper;
@@ -14,6 +15,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 public class WebMvcConfig implements WebMvcConfigurer {
     @Autowired
     private LoginTicketInterceptor loginTicketInterceptor;
+    @Autowired
+    private DateInterceptor dateInterceptor;
 //    @Autowired
 //    private LoginRequiredInterceptor loginRequiredInterceptor;
 
@@ -24,5 +27,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
 //                "/**/*.jpeg","/**/*.jpg");
 //        registry.addInterceptor(messageIntercepter).excludePathPatterns("/**/*.css","/**/*.js","/**/*.png",
 //                "/**/*.jpeg","/**/*.jpg");
+        registry.addInterceptor(dateInterceptor).excludePathPatterns("/**/*.css","/**/*.js","/**/*.png",
+                "/**/*.jpeg","/**/*.jpg");
     }
 }

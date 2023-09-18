@@ -50,4 +50,6 @@ public interface CommunityConstant {
     //版主
     String AUTHORITY_MODERATOR="moderator";
 
+    String TOPIC_DELETE="delete";
+
 }
