@@ -77,7 +77,7 @@ public class MapperTests {
 
     @Test
     public void testSelectPosts() {
-        List<DiscussPost> list = discussPostMapper.selectDiscussPosts(0, 0, 10);
+        List<DiscussPost> list = discussPostMapper.selectDiscussPosts(0, 0, 10,0);
         for(DiscussPost post : list) {
             System.out.println(post);
         }
@@ -91,7 +91,7 @@ public class MapperTests {
 
     @Test
     public void testDiscussPost(){
-        List<DiscussPost> dps = discussPostService.findDiscussPosts(0,10,10);
+        List<DiscussPost> dps = discussPostService.findDiscussPosts(0,10,10,0);
         System.out.println(discussPostService.findDiscussPostRows(0));
         for(DiscussPost d : dps){
             System.out.println(d.toString());

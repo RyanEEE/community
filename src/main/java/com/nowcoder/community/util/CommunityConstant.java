@@ -51,5 +51,7 @@ public interface CommunityConstant {
     String AUTHORITY_MODERATOR="moderator";
 
     String TOPIC_DELETE="delete";
+    //分享
+    String TOPIC_SHARE="share";
 
 }
